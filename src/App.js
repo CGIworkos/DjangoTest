@@ -7,6 +7,7 @@ import './App.css';
 import { Container } from "react-bootstrap";
 import Header from './components/Header'
 import Footer from './components/Footer'
+import UsersList from "./components/UsersList";
 
 const App = () => {
   return (
@@ -14,7 +15,7 @@ const App = () => {
         <Header />
         <main>
           <Container>
-            <h1>Main content must be here</h1>
+            <UsersList />
           </Container>
         </main>
       <Footer />
