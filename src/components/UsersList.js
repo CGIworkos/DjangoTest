@@ -6,11 +6,10 @@ class UsersList extends React.Component {
     super(props);
     this.state = {users: []};
     this.headers = [
-      // { key: 'userId', label: 'User ID' },
       { key: 'id', label: 'ID' },
       { key: 'name', label: 'Name' },
       { key: 'email', label: 'Email' },
-      { key: 'address.street', label: 'Address' }
+      { key: 'address', label: 'Address' }
     ];
   }
 
@@ -43,11 +42,10 @@ class UsersList extends React.Component {
           this.state.users.map(function(item, key) {
             return (
               <tr key = {key}>
-                {/*<td>{item.userId}</td>*/}
                 <td>{item.id}</td>
                 <td>{item.name}</td>
                 <td>{item.email}</td>
-                <td>{item.address.street}</td>
+                <td>{item.address.street} {item.address.suite} {item.address.city} {item.address.zipcode}</td>
               </tr>
             )
           })
