@@ -1,6 +1,9 @@
 import React from 'react';
 
 class UsersList extends React.Component {
+  street;
+  suite;
+  zipcode;
 
   constructor(props) {
     super(props);
@@ -23,6 +26,7 @@ class UsersList extends React.Component {
       });
     });
   }
+
   render() {
     return (
       <table>
@@ -43,9 +47,9 @@ class UsersList extends React.Component {
             return (
               <tr key = {key}>
                 <td>{item.id}</td>
-                <td>{item.name}</td>
+                <td><a href={`/user/${item.id}`}>{item.name}</a></td>
                 <td>{item.email}</td>
-                <td>{item.address.street} {item.address.suite} {item.address.city} {item.address.zipcode}</td>
+                <td>{item?.address.street} {item?.address.suite} {item?.address.city} {item?.address.zipcode}</td>
               </tr>
             )
           })
